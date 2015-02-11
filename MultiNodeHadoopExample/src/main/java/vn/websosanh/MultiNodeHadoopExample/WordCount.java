@@ -13,11 +13,17 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 public class WordCount extends Configured implements Tool {
-
-	public static void main(String[] args) throws Exception {
-		int res = ToolRunner.run(new Configuration(), new WordCount(),args);
+	public static void main(String[] args) {
+		int res=0;
+		try {
+			res = ToolRunner.run(new Configuration(), new WordCount(),args);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         System.exit(res);
 	}
+
 
 	public int run(String[] arg0) throws Exception {
 		// TODO Auto-generated method stub
